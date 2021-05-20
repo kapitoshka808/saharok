@@ -6,13 +6,16 @@ import { getCategories, getCategory } from "../../utils/api";
 const CategoryPage = ({ category }) => {
   const router = useRouter();
   if (router.isFallback) {
-    return <div>Loading category...</div>;
+    return <div>Загрузка...</div>;
   }
 
   return (
     <div>
       <Head>
-        <title>{category.name} products</title>
+        <title>
+          {category.name} | Сахарок 🛍👗 - купить женскую одежду онлайн в
+          магазине бутике Ташкента
+        </title>
       </Head>
       <ProductsList products={category.products} />
     </div>

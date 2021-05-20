@@ -6,7 +6,9 @@ const HomePage = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>Strapi Next.js E-commerce</title>
+        <title>
+          Сахарок 🛍👗 - купить женскую одежду онлайн в магазине бутике Ташкента
+        </title>
       </Head>
       <ProductsList products={products} />
     </div>
