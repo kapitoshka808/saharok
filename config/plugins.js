@@ -1,5 +1,8 @@
 module.exports = ({ env }) => ({
   upload: {
+    breakpoints: {
+      thumbnail: 150,
+    },
     provider: "cloudinary",
     providerOptions: {
       cloud_name: env("CLOUDINARY_NAME"),
