@@ -23,7 +23,6 @@ const ProductPage = ({ product }) => {
       <div className="flex justify-center rounded-t-lg pt-2 pb-2">
         <Image
           src={getStrapiMedia(product.image.url)}
-          className="ml-50"
           alt={product.title}
           width="300px"
           height="300px"

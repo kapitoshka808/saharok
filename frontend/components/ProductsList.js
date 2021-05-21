@@ -26,7 +26,6 @@ const ProductsList = ({ products }) => {
             <a>
               <div className="flex justify-center rounded-t-lg bg-white pt-2 pb-2">
                 <Image
-                  className="ml-50"
                   src={getStrapiMedia(_product.image.url)}
                   alt={_product.title}
                   width="300px"
