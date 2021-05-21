@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useToast } from "@chakra-ui/react";
 import { getProducts, getProduct } from "../../utils/api";
 import { getStrapiMedia } from "../../utils/medias";
 
 const ProductPage = ({ product }) => {
+  const toast = useToast();
   const router = useRouter();
   if (router.isFallback) {
     return <div>Загрузка...</div>;
@@ -20,7 +22,7 @@ const ProductPage = ({ product }) => {
       </Head>
       <div className="flex justify-center rounded-t-lg pt-2 pb-2">
         <Image
-          src={getStrapiMedia(product.image.formats.large.url)}
+          src={getStrapiMedia(product.image.url)}
           className="ml-50"
           alt={product.title}
           width="300px"
@@ -54,6 +56,15 @@ const ProductPage = ({ product }) => {
             )}
             data-item-name={product.title}
             v-bind="customFields"
+            onClick={() => {
+              toast({
+                title: "Добавлено✨",
+                status: "success",
+                duration: 1500,
+                position: "top",
+                isClosable: true,
+              });
+            }}
           >
             Добавить в корзину
           </button>
