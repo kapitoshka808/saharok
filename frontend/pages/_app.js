@@ -7,7 +7,7 @@ import { getCategories } from "../utils/api";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 import { persistStore } from "reduxjs-toolkit-persist";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/index.css";
 
 const MyApp = ({ Component, pageProps }) => {
