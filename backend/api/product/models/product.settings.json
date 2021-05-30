@@ -54,6 +54,13 @@
     "sizes": {
       "type": "text",
       "required": false
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 0,
+      "required": false,
+      "max": 99,
+      "min": 0
     }
   }
 }

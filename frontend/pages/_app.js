@@ -1,26 +1,40 @@
 import App from "next/app";
 import Head from "next/head";
 import Layout from "../components/Layout";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "react-redux";
+import { store } from "../app/store";
 import { getCategories } from "../utils/api";
+import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
+import { persistStore } from "reduxjs-toolkit-persist";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import "../styles/index.css";
 
 const MyApp = ({ Component, pageProps }) => {
+  let persistor = persistStore(store, {}, function () {
+    persistor.persist();
+  });
   return (
-    <ChakraProvider>
-      <Layout categories={pageProps.categories}>
-        <Head>
-          <link rel="preconnect" href="https://app.snipcart.com" />
-          <link rel="preconnect" href="https://cdn.snipcart.com" />
-          <link
-            rel="stylesheet"
-            href="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.css"
+    <Provider store={store}>
+      <PersistGate loading={<div>loading</div>} persistor={persistor}>
+        <Layout>
+          <Head></Head>
+          <Component {...pageProps} />
+          <ToastContainer
+            position="top-center"
+            autoClose={1500}
+            limit={1}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
           />
-          <script src="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js" />
-        </Head>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+        </Layout>
+      </PersistGate>
+    </Provider>
   );
 };
 

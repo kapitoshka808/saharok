@@ -1,14 +1,8 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import ProductsList from "../../components/ProductsList";
 import { getCategories, getCategory } from "../../utils/api";
 
 const CategoryPage = ({ category }) => {
-  const router = useRouter();
-  if (router.isFallback) {
-    return <div>Загрузка...</div>;
-  }
-
   return (
     <div>
       <Head>

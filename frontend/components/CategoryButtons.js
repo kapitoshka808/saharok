@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { getCategories } from "../utils/api";
 
-const CategoryButtons = ({ categories = [] }) => {
+const categories = await getCategories();
+
+const CategoryButtons = () => {
   return (
     <div className="container flex flex-wrap gap-2 mt-8 justify-center">
       {categories.map((_category) => (

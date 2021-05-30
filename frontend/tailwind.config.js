@@ -16,5 +16,8 @@ module.exports = {
       },
     },
   },
+  future: {
+    purgeLayersByDefault: true,
+  },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };

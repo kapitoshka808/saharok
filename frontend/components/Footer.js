@@ -5,7 +5,7 @@ let currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <>
-      <div className="flex items-center mx-8 my-4 flex-col lg:flex-row">
+      <div className="flex items-center mx-8 my-4 flex-col md:flex-row">
         <p className="flex-grow text-lg font-semibold text-gray-600">
           {currentYear} {"\u00A9"} Saharok
         </p>
