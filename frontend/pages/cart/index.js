@@ -147,14 +147,14 @@ function Cart() {
                       адреса доставки
                     </p>
                   </div>
+
                   <form
-                    acceptCharset="UTF-8"
-                    action="https://app.form2chat.io/f/bbbce594"
+                    action="https://formsubmit.co/17e7e37b502197eaecd5e4a705581faf"
                     method="POST"
                     className="mt-5 sm:flex sm:items-end"
                   >
                     <div className="w-full sm:max-w-xs">
-                      <label htmlFor="tel" className="">
+                      <label htmlFor="tel" className="text-gray-900">
                         Номер телефона
                       </label>
                       <input
@@ -167,21 +167,20 @@ function Cart() {
                         required
                       />
                     </div>
-                    <input type="hidden" name="_gotyou"></input>
+
                     {addedItems.map((item) => {
                       return (
                         <input
                           className="hidden"
-                          type="hidden"
                           type="text"
                           name={`ID товара: ${item.id}`}
                           value={
-                            `Фото: ${item.image.url} \u000D` +
-                            `Название товара: ${item.title} \u000D` +
-                            `Количество: ${item.quantity} \u000D` +
+                            `Фото: ${item.image.url} ***` +
+                            `Название товара: ${item.title} ***` +
+                            `Количество: ${item.quantity} ***` +
                             `Цена за шт: ${new Intl.NumberFormat("ru").format(
                               item.price
-                            )} \u000D`
+                            )}`
                           }
                           required
                           readOnly
@@ -190,23 +189,19 @@ function Cart() {
                     })}
                     <input
                       className="hidden"
-                      type="hidden"
                       type="text"
                       name="Всего"
                       value={`${new Intl.NumberFormat("ru").format(total)}`}
                       required
                       readOnly
                     />
+
                     <input
                       type="hidden"
-                      id="recaptcha_token"
-                      name="recaptcha_token"
-                    ></input>
-                    <input
-                      type="hidden"
-                      name="action"
-                      value="validate_captcha"
-                    ></input>
+                      name="_next"
+                      value="http://localhost:3000/thanks"
+                    />
+
                     <button
                       type="submit"
                       className="text-sm mt-4 h-10 w-full inline-flex items-center justify-center px-4 py-2 border border-gray-500 shadow-sm font-medium rounded-md text-white bg-gradient-to-r from-red-600 to-blue-400 hover:from-red-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 md:w-auto sm:text-base"
