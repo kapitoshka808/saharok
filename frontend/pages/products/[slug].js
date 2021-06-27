@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import CategoryButtons from "../../components/CategoryButtons";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../features/shop/productSlice";
 import { getProducts, getProduct } from "../../utils/api";
@@ -15,7 +14,6 @@ const ProductPage = ({ product }) => {
 
   return (
     <>
-      <CategoryButtons />
       <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-8">
         <Head>
           <title>
