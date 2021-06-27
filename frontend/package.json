@@ -25,6 +25,7 @@
     "react-redux": "^7.2.4",
     "react-toastify": "^7.0.4",
     "reduxjs-toolkit-persist": "^7.0.1",
+    "swr": "^0.5.6",
     "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
