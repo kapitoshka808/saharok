@@ -56,7 +56,7 @@ const HomePage = ({ products }) => {
       ) : error ? (
         <div>Error.</div>
       ) : (
-        <div className="mx-auto grid max-w-lg md:max-w-3xl lg:max-w-none m-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mt-8 justify-items-center">
+        <div className="mx-auto grid max-w-lg md:max-w-3xl lg:max-w-none m-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-8 justify-items-center">
           <ProductsList products={products} />
           {data !== undefined
             ? data.map((mapedData) => {
