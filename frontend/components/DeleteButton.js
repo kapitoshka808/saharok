@@ -1,19 +1,19 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { useDispatch } from "react-redux";
-import { Fragment, useState } from "react";
-import { removeProduct } from "../features/shop/productSlice";
-import { TrashIcon } from "@heroicons/react/outline";
+import { Dialog, Transition } from "@headlessui/react"
+import { useDispatch } from "react-redux"
+import { Fragment, useState } from "react"
+import { removeProduct } from "../features/shop/productSlice"
+import { TrashIcon } from "@heroicons/react/outline"
 
 export default function DeleteButton(itemId) {
-  const dispatch = useDispatch();
-  let [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch()
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   return (
@@ -113,7 +113,7 @@ export default function DeleteButton(itemId) {
                     type="button"
                     className="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-gray-100 bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
                     onClick={() => {
-                      dispatch(removeProduct(itemId.itemId));
+                      dispatch(removeProduct(itemId.itemId))
                     }}
                   >
                     Удалить
@@ -125,5 +125,5 @@ export default function DeleteButton(itemId) {
         </Dialog>
       </Transition>
     </>
-  );
+  )
 }

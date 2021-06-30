@@ -1,6 +1,7 @@
-import { PhoneIcon } from "@heroicons/react/outline";
+import Image from "next/image"
+import { PhoneIcon } from "@heroicons/react/outline"
 
-let currentYear = new Date().getFullYear();
+let currentYear = new Date().getFullYear()
 
 const Footer = () => {
   return (
@@ -30,7 +31,12 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="w-10"
           >
-            <img src="/telegram.svg" alt="Telegram channel" />
+            <Image
+              src="/telegram.svg"
+              alt="Telegram channel"
+              width={40}
+              height={40}
+            />
           </a>
           <a
             href="https://www.instagram.com/sahhhar_ok/"
@@ -38,12 +44,17 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="w-10"
           >
-            <img src="/instagram.svg" alt="Instagram profile" />
+            <Image
+              src="/instagram.svg"
+              alt="Instagram profile"
+              width={40}
+              height={40}
+            />
           </a>
         </span>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

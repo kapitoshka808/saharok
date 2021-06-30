@@ -1,15 +1,15 @@
-import Link from "next/link";
-import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { addProduct } from "../features/shop/productSlice";
-import { getStrapiMedia } from "../utils/medias";
+import Link from "next/link"
+import Image from "next/image"
+import { useDispatch } from "react-redux"
+import { addProduct } from "../features/shop/productSlice"
+import { getStrapiMedia } from "../utils/medias"
 
 function handleClick(e) {
-  e.preventDefault();
+  e.preventDefault()
 }
 
 const ProductsList = ({ products }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -40,8 +40,8 @@ const ProductsList = ({ products }) => {
                 {product.status === "published" ? (
                   <button
                     onClick={(e) => {
-                      handleClick(e);
-                      dispatch(addProduct(product.id));
+                      handleClick(e)
+                      dispatch(addProduct(product.id))
                     }}
                     className="w-full mt-4  border border-gray-200 d hover:shadow-lg text-gray-100 font-semibold py-2 px-4 rounded shadow bg-gradient-to-r from-red-600 to-red-600 hover:from-red-600 hover:to-blue-400"
                   >
@@ -65,7 +65,7 @@ const ProductsList = ({ products }) => {
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default ProductsList;
+export default ProductsList
