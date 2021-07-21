@@ -1,47 +1,47 @@
-import Head from "next/head";
-import ProductsList from "../components/ProductsList";
-import Link from "next/link";
-import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { getStrapiMedia } from "../utils/medias";
-import { useSWRInfinite } from "swr";
-import { addProduct } from "../features/shop/productSlice";
+import Head from "next/head"
+import ProductsList from "../components/ProductsList"
+import Link from "next/link"
+import Image from "next/image"
+import { useDispatch } from "react-redux"
+import { getStrapiMedia } from "../utils/medias"
+import { useSWRInfinite } from "swr"
+import { addProduct } from "../features/shop/productSlice"
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
+const fetcher = (url) => fetch(url).then((r) => r.json())
 
 const getKey = (pageIndex, previousPageData) => {
-  if (previousPageData && !previousPageData.length) return null;
+  if (previousPageData && !previousPageData.length) return null
   return `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
-  }/products?_start=${pageIndex + 4}&_limit=1`;
-};
+  }/products?_start=${pageIndex + 4}&_limit=1`
+}
 
 export async function getStaticProps() {
   const products = await fetcher(
     `${
       process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
     }/products?_start=0&_limit=4`
-  );
+  )
 
   return {
     props: { products },
-  };
+  }
 }
 
 const HomePage = ({ products }) => {
   const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher, {
     initialSize: 0,
     revalidateAll: true,
-  });
+  })
 
-  const isEmpty = data?.[0]?.length === 0;
-  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < 1);
+  const isEmpty = data?.[0]?.length === 0
+  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < 1)
 
   function handleClick(e) {
-    e.preventDefault();
+    e.preventDefault()
   }
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -88,8 +88,8 @@ const HomePage = ({ products }) => {
                           {product.status === "published" ? (
                             <button
                               onClick={(e) => {
-                                handleClick(e);
-                                dispatch(addProduct(product.id));
+                                handleClick(e)
+                                dispatch(addProduct(product.id))
                               }}
                               className="w-full mt-4  border border-gray-200 d hover:shadow-lg text-gray-100 font-semibold py-2 px-4 rounded shadow bg-gradient-to-r from-red-600 to-red-600 hover:from-red-600 hover:to-blue-400"
                             >
@@ -111,7 +111,7 @@ const HomePage = ({ products }) => {
                       </a>
                     </Link>
                   </div>
-                ));
+                ))
               })
             : null}
         </div>
@@ -127,7 +127,7 @@ const HomePage = ({ products }) => {
         </div>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

@@ -1,16 +1,16 @@
-import Head from "next/head";
-import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { addProduct } from "../../features/shop/productSlice";
-import { getProducts, getProduct } from "../../utils/api";
-import { getStrapiMedia } from "../../utils/medias";
+import Head from "next/head"
+import Image from "next/image"
+import { useDispatch } from "react-redux"
+import { addProduct } from "../../features/shop/productSlice"
+import { getProducts, getProduct } from "../../utils/api"
+import { getStrapiMedia } from "../../utils/medias"
 
 function handleClick(e) {
-  e.preventDefault();
+  e.preventDefault()
 }
 
 const ProductPage = ({ product }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -48,8 +48,8 @@ const ProductPage = ({ product }) => {
             <button
               className="mt-4 border border-gray-200 hover:shadow-lg text-gray-100 font-semibold py-2 px-4 rounded shadow bg-gradient-to-r from-red-600 to-red-600 hover:from-red-600 hover:to-blue-400"
               onClick={(e) => {
-                handleClick(e);
-                dispatch(addProduct(product.id));
+                handleClick(e)
+                dispatch(addProduct(product.id))
               }}
             >
               Добавить в корзину
@@ -72,24 +72,24 @@ const ProductPage = ({ product }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ProductPage;
+export default ProductPage
 
 export async function getStaticProps({ params }) {
-  const product = await getProduct(params.slug);
-  return { props: { product } };
+  const product = await getProduct(params.slug)
+  return { props: { product } }
 }
 
 export async function getStaticPaths() {
-  const products = await getProducts();
+  const products = await getProducts()
   return {
     paths: products.map((_product) => {
       return {
         params: { slug: _product.slug },
-      };
+      }
     }),
     fallback: true,
-  };
+  }
 }

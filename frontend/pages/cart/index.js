@@ -1,17 +1,17 @@
-import Link from "next/link";
-import Image from "next/image";
-import Head from "next/head";
-import { useSelector, useDispatch } from "react-redux";
-import { getStrapiMedia } from "../../utils/medias";
-import { ShoppingBagIcon } from "@heroicons/react/outline";
-import { increseAmount, decreseAmount } from "../../features/shop/productSlice";
-import DeleteButton from "../../components/DeleteButton";
+import Link from "next/link"
+import Image from "next/image"
+import Head from "next/head"
+import { useSelector, useDispatch } from "react-redux"
+import { getStrapiMedia } from "../../utils/medias"
+import { ShoppingBagIcon } from "@heroicons/react/outline"
+import { increseAmount, decreseAmount } from "../../features/shop/productSlice"
+import DeleteButton from "../../components/DeleteButton"
 
 function Cart() {
-  const addedItems = useSelector((state) => state.addedItems);
-  const totalItemsInCart = useSelector((state) => state.totalItemsInCart);
-  const total = useSelector((state) => state.total);
-  const dispatch = useDispatch();
+  const addedItems = useSelector((state) => state.addedItems)
+  const totalItemsInCart = useSelector((state) => state.totalItemsInCart)
+  const total = useSelector((state) => state.total)
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -100,7 +100,7 @@ function Cart() {
                                   <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                                     <button
                                       onClick={() => {
-                                        dispatch(decreseAmount(item.id));
+                                        dispatch(decreseAmount(item.id))
                                       }}
                                       className="bg-gray-300 text-gray-700 hover:text-gray-900 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none text-lg focus:outline-none"
                                     >
@@ -115,7 +115,7 @@ function Cart() {
                                     />
                                     <button
                                       onClick={() => {
-                                        dispatch(increseAmount(item.id));
+                                        dispatch(increseAmount(item.id))
                                       }}
                                       className="bg-gray-300 text-gray-700 hover:text-gray-900 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer text-lg focus:outline-none"
                                     >
@@ -132,7 +132,7 @@ function Cart() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
           <div className="max-w-7xl mx-2 md:mx-0 py-6 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
@@ -171,6 +171,7 @@ function Cart() {
                     {addedItems.map((item) => {
                       return (
                         <input
+                          key={item.id}
                           className="hidden"
                           type="text"
                           name={`ID товара: ${item.id}`}
@@ -185,7 +186,7 @@ function Cart() {
                           required
                           readOnly
                         />
-                      );
+                      )
                     })}
                     <input
                       className="hidden"
@@ -219,7 +220,7 @@ function Cart() {
         </>
       )}
     </>
-  );
+  )
 }
 
-export default Cart;
+export default Cart
