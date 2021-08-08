@@ -1,9 +1,9 @@
 module.exports = {
   webpack: function (config, options) {
-    config.experiments = { topLevelAwait: true };
-    return config;
+    config.experiments = { topLevelAwait: true }
+    return config
   },
   images: {
     domains: ["res.cloudinary.com"],
   },
-};
+}

@@ -13,14 +13,14 @@ const getKey = (pageIndex, previousPageData) => {
   if (previousPageData && !previousPageData.length) return null
   return `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
-  }/products?_start=${pageIndex + 4}&_limit=1`
+  }/products?_start=${pageIndex + 4}&_limit=1&_sort=created_at:desc`
 }
 
 export async function getStaticProps() {
   const products = await fetcher(
     `${
       process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
-    }/products?_start=0&_limit=4`
+    }/products?_start=0&_limit=4&_sort=created_at:desc`
   )
 
   return {

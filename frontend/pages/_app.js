@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/Layout"
+import ProductPlaceholder from "../components/ProductPlaceholder"
 import { Provider } from "react-redux"
 import { store } from "../app/store"
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react"
@@ -14,7 +15,14 @@ const MyApp = ({ Component, pageProps }) => {
   })
   return (
     <Provider store={store}>
-      <PersistGate loading={<div>loading app</div>} persistor={persistor}>
+      <PersistGate
+        loading={
+          <Layout>
+            <ProductPlaceholder />
+          </Layout>
+        }
+        persistor={persistor}
+      >
         <Layout>
           <Head></Head>
           <Component {...pageProps} />

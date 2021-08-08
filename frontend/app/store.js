@@ -15,6 +15,7 @@ import productSlice from "../features/shop/productSlice"
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: ["categories"],
   stateReconciler: autoMergeLevel1,
 }
 

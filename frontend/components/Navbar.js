@@ -17,6 +17,7 @@ const Navbar = () => {
             className="logo"
             height={60}
             width={250}
+            priority
           />
         </a>
       </Link>
