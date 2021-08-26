@@ -3346,10 +3346,10 @@ redux@^4.0.0, redux@^4.1.0:
   dependencies:
     "@babel/runtime" "^7.9.2"
 
-reduxjs-toolkit-persist@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/reduxjs-toolkit-persist/-/reduxjs-toolkit-persist-7.0.3.tgz#eb084e736bb186280ec476d125e0883eed7c0ab0"
-  integrity sha512-gE0Wa21tdMWun9WzLf3T9eV8uwEJOq8IjBiHnIGv3tezBafA64a1zpkJdGw46QtivaCXuBNE/CCt3VeDwSM4jQ==
+reduxjs-toolkit-persist@^7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/reduxjs-toolkit-persist/-/reduxjs-toolkit-persist-7.0.7.tgz#0c7365b9a7f26ef4ed9bf61411eec361b8fd5c62"
+  integrity sha512-dWBU/+jT77t2oNU45OgDJPFmNFjkHHfB7q/wDkVnOtL4GUVfZZtYHiP8BwUXFU5N7pM2KC4C/u221eZwUCLqpA==
 
 regenerator-runtime@^0.13.4:
   version "0.13.7"
