@@ -11,8 +11,8 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.3",
     "@headlessui/react": "^1.4.0",
-    "@heroicons/react": "^1.0.1",
     "@reduxjs/toolkit": "^1.6.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "autoprefixer": "^10.3.1",
