@@ -200,9 +200,7 @@ function Cart() {
                     <input
                       type="hidden"
                       name="_next"
-                      value={`${
-                        process.env.NEXT_DOMAIN_URL || "http://localhost:3000"
-                      }/thanks`}
+                      value={`${process.env.NEXT_DOMAIN_URL}/thanks`}
                     />
 
                     <button
