@@ -200,7 +200,7 @@ function Cart() {
                     <input
                       type="hidden"
                       name="_next"
-                      value={`${process.env.NEXT_DOMAIN_URL}/thanks`}
+                      value="https://saharok.vercel.app/thanks"
                     />
 
                     <button
