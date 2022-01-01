@@ -14,7 +14,7 @@
     "@babel/core": "^7.16.0",
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
-    "@reduxjs/toolkit": "^1.6.0",
+    "@reduxjs/toolkit": "^1.7.0",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "autoprefixer": "^10.3.5",
     "core-js": "^3.18.0",
