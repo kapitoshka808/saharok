@@ -11,7 +11,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.22.6",
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
     "@reduxjs/toolkit": "^1.6.0",
